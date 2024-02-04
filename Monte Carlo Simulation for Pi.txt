@@ -1,0 +1,13 @@
+import random
+
+def monte_carlo_pi(num_samples):
+    inside_circle = 0
+    for _ in range(num_samples):
+        x, y = random.uniform(0, 1), random.uniform(0, 1)
+        if x**2 + y**2 <= 1:
+            inside_circle += 1
+    return (inside_circle / num_samples) * 4
+
+# Example usage
+estimated_pi = monte_carlo_pi(100000)
+print("Estimated value of Pi using Monte Carlo simulation:", estimated_pi)
